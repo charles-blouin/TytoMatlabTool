@@ -2,3 +2,6 @@
 *.log
 *.asv
 *.mat
+GUI_DATA.mat
+MultiwiiProtocol/protocol_update_state.asv
+Oscilloscope_DLL/OscMx.mexw32
