@@ -23,12 +23,11 @@ for i=1:DEF_SIZE
            Value = 0;
            if(strcmp(TYPE,'uint16')||strcmp(TYPE,'int16'))
                len = 2;
-           else
-                if(strcmp(TYPE,'uint8')||strcmp(TYPE,'int8'))
-                    len = 1;
-                else
-                    error('Unspecified datatype, protocol_update_state.m');
-                end
+           elseif(strcmp(TYPE,'uint8')||strcmp(TYPE,'int8'))
+                len = 1;
+           elseif(strcmp(TYPE,'uint32')||strcmp(TYPE,'int32'))
+                len = 4;
+           else error('Unspecified datatype, protocol_update_state.m');
            end
            try
               Value = typecast(inBuf(byte_counter:byte_counter+len-1),TYPE);
